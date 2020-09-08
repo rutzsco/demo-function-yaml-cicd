@@ -1,10 +1,16 @@
 parameters: 
 - name: stageName
+  default: ''
 - name: azureSubscription
+  default: ''
 - name: functionAppName
+  default: ''
 - name: resourceGroupName
+  default: ''
 - name: storageAccountName
+  default: ''
 - name: region
+  default: ''
     
 stages:
   - stage: Deploy
