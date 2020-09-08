@@ -12,7 +12,7 @@ variables:
 stages:
 - template: azure-release-pipelines-stage-template.yml
   parameters:
-    stageName: 'CI'
+    stageName: 'API-CI'
     azureSubscription: '$(azureSubscription)'
     functionAppName: 'demo-function-api-ci'
     resourceGroupName: 'demo-function-api-ci'
