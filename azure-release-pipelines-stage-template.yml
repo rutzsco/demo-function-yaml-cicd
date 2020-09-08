@@ -1,12 +1,12 @@
-  variables:   
-    azureSubscription: '{{ azureRmConnection.Id }}'
-    functionAppName: '{{ functionAppName }}'
-    vmImageName: 'vs2017-win2016'
-    resourceGroupName: '{{ resourceGroupName }}'
-    region: 'Central US'
-    storageAccountName: '{{ storageAccountName }}'
+parameters:   
+  azureSubscription: '{{ azureRmConnection.Id }}'
+  functionAppName: '{{ functionAppName }}'
+  vmImageName: 'vs2017-win2016'
+  resourceGroupName: '{{ resourceGroupName }}'
+  region: 'Central US'
+  storageAccountName: '{{ storageAccountName }}'
      
-  stages:
+stages:
   
   - stage: Deploy
     displayName: Deploy stage
