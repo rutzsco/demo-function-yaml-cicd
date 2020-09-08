@@ -1,11 +1,10 @@
-parameters:  
+parameters: 
+- name: stageName
 - name: azureSubscription
 - name: functionAppName
 - name: resourceGroupName
 - name: storageAccountName
 - name: region
-- name: vmImageName
-  default: 'vs2017-win2016'
     
 stages:
   - stage: Deploy
@@ -14,9 +13,9 @@ stages:
     jobs:
     - deployment: Deploy
       displayName: Deploy
-      environment: 'development'
+      environment: ${{ parameters.stageName }}
       pool:
-        vmImage: $(vmImageName)
+        vmImage: 'vs2017-win2016'
   
       strategy:
         runOnce:
@@ -26,9 +25,9 @@ stages:
             - task: AzureResourceGroupDeployment@2
               displayName: '1. Create Function Infrastructure'
               inputs:
-                azureSubscription: '$(azureSubscription)'
-                resourceGroupName: '$(resourceGroupName)'
-                location: '$(region)'
+                azureSubscription: ${{ parameters.azureSubscription }}
+                resourceGroupName: ${{ parameters.resourceGroupName }}
+                location: ${{ parameters.region }}
                 csmFile: '$(Pipeline.Workspace)/build/Infrastructure/function-app-consumption.json'
-                overrideParameters: '-appName $(functionAppName) -storageAccountName $(storageAccountName)'
+                overrideParameters: '-appName ${{ parameters.functionAppName }} -storageAccountName ${{ parameters.storageAccountName }}'
                 deploymentOutputs: ResourceGroupDeploymentOutputs
