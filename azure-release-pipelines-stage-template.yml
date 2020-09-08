@@ -31,7 +31,7 @@ stages:
             - task: AzureResourceGroupDeployment@2
               displayName: '1. Create Function Infrastructure'
               inputs:
-                azureSubscription: 'Internal Demo Account (164a84cf-b099-4567-a527-c2a8143a32c7)'
+                azureSubscription: ${{ parameters.azureSubscription }}
                 resourceGroupName: ${{ parameters.resourceGroupName }}
                 location: ${{ parameters.region }}
                 csmFile: '$(Pipeline.Workspace)/build/Infrastructure/function-app-consumption.json'
