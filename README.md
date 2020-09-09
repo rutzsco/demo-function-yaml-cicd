@@ -1,5 +1,5 @@
-# Sample Function Deployment with YAML multistage pipelines and stage templates.
+## Sample Function Deployment with YAML multistage pipelines and stage templates.
 
-## Overview
+### Overview
 
 ![GitHub Logo](az-pipeline-yaml-flow.png)
