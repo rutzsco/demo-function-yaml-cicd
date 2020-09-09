@@ -12,7 +12,8 @@ variables:
 stages:
 - template: azure-release-pipelines-stage-template.yml
   parameters:
-    stageName: 'API-CI'
+    stageName: 'CI'
+    environment: 'API-CI'
     azureSubscription: ${{ variables.azureSubscription }}
     functionAppName: 'demo-function-api-ci'
     resourceGroupName: 'demo-function-api-ci'
@@ -21,7 +22,8 @@ stages:
     packageName: 'Demo.Function.API.zip'
 - template: azure-release-pipelines-stage-template.yml
   parameters:
-    stageName: 'API-QA'
+    stageName: 'QA'
+    environment: 'API-QA'
     azureSubscription: ${{ variables.azureSubscription }}
     functionAppName: 'demo-function-api-qa'
     resourceGroupName: 'demo-function-api-qa'

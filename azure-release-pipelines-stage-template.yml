@@ -1,6 +1,8 @@
 parameters: 
 - name: stageName
   default: ''
+- name: environment
+  default: ''
 - name: azureSubscription
   default: ''
 - name: functionAppName
@@ -21,7 +23,7 @@ stages:
     jobs:
     - deployment: Deploy
       displayName: Deploy
-      environment: ${{ parameters.stageName }}
+      environment: ${{ parameters.environment }}
       pool:
         vmImage: 'vs2017-win2016'
   
