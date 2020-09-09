@@ -47,6 +47,6 @@ stages:
               inputs:
                 azureSubscription: '$(azureSubscription)'
                 appType: functionApp
-                appName: $(app-name)
-                package: '$(Pipeline.Workspace)/build/App/$(packageName)'
+                appName: ${{ parameters.functionAppName }}
+                package: '$(Pipeline.Workspace)/build/App/${{ parameters.packageName }}'
                 AppSettings: ''
