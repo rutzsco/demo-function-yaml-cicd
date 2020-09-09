@@ -20,11 +20,11 @@ stages:
     region: 'Central US'
     packageName: 'Demo.Function.API.zip'
 - template: azure-release-pipelines-stage-template.yml
-    parameters:
-      stageName: 'API-QA'
-      azureSubscription: ${{ variables.azureSubscription }}
-      functionAppName: 'demo-function-api-qa'
-      resourceGroupName: 'demo-function-api-qa'
-      storageAccountName: 'azfunctionsdapiqa'
-      region: 'Central US'
-      packageName: 'Demo.Function.API.zip'
+  parameters:
+    stageName: 'API-QA'
+    azureSubscription: ${{ variables.azureSubscription }}
+    functionAppName: 'demo-function-api-qa'
+    resourceGroupName: 'demo-function-api-qa'
+    storageAccountName: 'azfunctionsdapiqa'
+    region: 'Central US'
+    packageName: 'Demo.Function.API.zip'
