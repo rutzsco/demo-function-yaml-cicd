@@ -11,7 +11,9 @@ parameters:
   default: ''
 - name: region
   default: ''
-    
+- name: packageName
+  default: ''  
+
 stages:
   - stage: Deploy
     displayName: Deploy stage
@@ -37,3 +39,12 @@ stages:
                 csmFile: '$(Pipeline.Workspace)/build/Infrastructure/function-app-consumption.json'
                 overrideParameters: '-appName ${{ parameters.functionAppName }} -storageAccountName ${{ parameters.storageAccountName }}'
                 deploymentOutputs: ResourceGroupDeploymentOutputs
+
+            - task: AzureFunctionApp@1
+              displayName: '2. Azure functions app deploy'
+              inputs:
+                azureSubscription: '$(azureSubscription)'
+                appType: functionApp
+                appName: $(app-name)
+                package: '$(Pipeline.Workspace)/build/App/$(packageName)'
+                AppSettings: ''
