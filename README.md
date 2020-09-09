@@ -1,20 +1,20 @@
-## Sample Function Deployment with YAML multistage pipelines and stage templates.
+# Sample Function Deployment with YAML multistage pipelines and stage templates.
 
-### Overview
+## Overview
 
 ![GitHub Logo](az-pipeline-yaml-flow.png)
 
-### Key Components
+## Key Components
 
-#### Infrastructure as Code
+### Infrastructure as Code
 
 ARM templates are located in the Infrstructure folder and used in the release pipeline. 
 
-#### Build
+### Build
 
 **azure-build-pipelines.yml** - contains the build pipeline which build the function app code (.Net) and creates app and infrstructure pipeline artifacts. 
 
-#### Release
+### Release
 
 **azure-release-pipelines.yml** - containts the release pipeline that triggers on completion of the build pipeline. This pipeline leverages the azure-release-pipelines-stage-template.yml template to deploy each stage.
 
