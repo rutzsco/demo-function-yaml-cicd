@@ -19,7 +19,6 @@ stages:
     storageAccountName: 'azfunctionsdapici'
     region: 'Central US'
     packageName: 'Demo.Function.API.zip'
-
 - template: azure-release-pipelines-stage-template.yml
     parameters:
       stageName: 'API-QA'
