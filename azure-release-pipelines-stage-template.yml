@@ -15,8 +15,8 @@ parameters:
   default: ''  
 
 stages:
-  - stage: Deploy
-    displayName: Deploy stage
+  - stage: ${{ parameters.stageName }}
+    displayName: ${{ parameters.stageName }}
 
     jobs:
     - deployment: Deploy
