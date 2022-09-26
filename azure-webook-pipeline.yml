@@ -1,0 +1,20 @@
+resources:       
+  webhooks:
+  - webhook: 'Process Event'
+    connection: 'Event Grid'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: AzureCLI@2
+  displayName: Deploy Dapr Components
+  inputs:
+    azureSubscription: $(azureServiceConnection)
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+    ls
