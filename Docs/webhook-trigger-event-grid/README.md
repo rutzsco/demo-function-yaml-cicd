@@ -1,25 +1,25 @@
 # Sample YAML pipelines with webhook trigger.
 
-### 1. Create Webhook Service Connection
+## 1. Create Webhook Service Connection
 
 ![ServiceConnectionInfo](ServiceConnectionInfo.png)
 
-### 2. Create Pipeline with Webhook Trigger
+## 2. Create Pipeline with Webhook Trigger
 
-TBD
+View sample pipeline:
 
-### 3. Test Webhook Trigger
+[azure-webook-pipeline.yml](../../azure-webook-pipeline.yml)
 
-Request Url Template - "https://dev.azure.com/<ADOOrganization>/_apis/public/distributedtask/webhooks/<WebHookName>?api-version=6.0-preview"
+## 3. Test Webhook Trigger
+
+Request Url Template - "https://dev.azure.com/ADOOrganization/_apis/public/distributedtask/webhooks/WebHookName?api-version=6.0-preview"
 
 ![WebHookPostman](WebHookPostman.png)
 
-### 4. Create EventGrid Webhook Subscription
+## 4. Create EventGrid Webhook Subscription
 
 ![WebHookPostman](EventGridSubscription.png)
 
-
-
-## Reference
+# Reference
 
 - https://learn.microsoft.com/en-us/azure/devops/release-notes/2020/pipelines/sprint-172-update
