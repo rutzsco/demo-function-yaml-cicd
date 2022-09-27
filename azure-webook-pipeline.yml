@@ -1,7 +1,7 @@
 resources:       
   webhooks:
-  - webhook: 'Process Event'
-    connection: 'Event Grid'
+  - webhook: 'ProcessEvent'
+    connection: 'EventGrid'
 
 pool:
   vmImage: 'ubuntu-latest'
